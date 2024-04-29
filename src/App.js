@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-
-function App() {
+import Header from './components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Result from './pages/Result';
+import Quiz from './pages/Quiz';
+import axios from 'axios';
+const App = () => {
+  const [name,setName]=useState("")
+  const [questions,setQuestions]=useState()
+  const [score,setScore]=useState(0)
+  const fetchQuestions=async(category="",difficulty="")=>{
+    const {data}=await axios.get(`https://opentdb.com/api.php?amount=10${
+      category && `&category=${category}`
+    }${difficulty && `&difficulty=${difficulty}`}&type=multiple`);
+    setQuestions(data.results)
+  }
+  console.log(questions);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='app' style={{backgroundImage:'url(../q.png)'}}>
+      <Header/>
+      <Routes>
+        <Route path='/'exact element={<Home fetchQuestions={fetchQuestions} name={name} setName={setName}/>}></Route>
+        <Route path='/result'exact element={<Result score={score} name={name}/>}></Route>
+        <Route path='/quiz'exact element={<Quiz name={name} questions={questions} setScore={setScore} score={score} setQuestions={setQuestions} />}></Route>
+      </Routes>
     </div>
+
+    <Footer/>
+    </>
   );
 }
 
