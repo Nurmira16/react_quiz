@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Nurmira16/react_quiz.git/static/css/main.c65599d6.css",
-    "main.js": "/Nurmira16/react_quiz.git/static/js/main.07e8d65c.js",
-    "index.html": "/Nurmira16/react_quiz.git/index.html",
-    "main.c65599d6.css.map": "/Nurmira16/react_quiz.git/static/css/main.c65599d6.css.map",
-    "main.07e8d65c.js.map": "/Nurmira16/react_quiz.git/static/js/main.07e8d65c.js.map"
+    "main.css": "/Nurmira16/react_quiz/static/css/main.c65599d6.css",
+    "main.js": "/Nurmira16/react_quiz/static/js/main.ff053750.js",
+    "index.html": "/Nurmira16/react_quiz/index.html",
+    "main.c65599d6.css.map": "/Nurmira16/react_quiz/static/css/main.c65599d6.css.map",
+    "main.ff053750.js.map": "/Nurmira16/react_quiz/static/js/main.ff053750.js.map"
   },
   "entrypoints": [
     "static/css/main.c65599d6.css",
-    "static/js/main.07e8d65c.js"
+    "static/js/main.ff053750.js"
   ]
 }
